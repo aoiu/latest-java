@@ -1,8 +1,10 @@
 {
   "name": "latest-java",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "update the java part",
-  "main": "index.js",
+  "bin": {
+  	"latest-java": "./bin/latest-java"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +12,10 @@
     "type": "git",
     "url": "git@github.com:aoiu/latest-java.git"
   },
-  "author": "aoiuym@gmail.com",
+  "author": {
+  	"name": "aoiu",
+  	"email": "aoiuym@gmail.com"
+  },
   "license": "ISC",
   "dependencies": {
     "dong-queue": "^0.1.1",

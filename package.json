@@ -1,6 +1,6 @@
 {
   "name": "latest-java",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "update the java part",
   "bin": {
   	"latest-java": "./bin/latest-java"

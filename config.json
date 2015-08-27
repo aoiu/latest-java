@@ -1,0 +1,21 @@
+{
+	"WebApplication.java": {
+  		"path": "java/com/nd/admin/app/",
+  		"replace": {
+  			"getRealm": {
+	  			"from": "admin-develop.sdp.nd",
+	  			"to": "mytest.sdp.nd"
+  			}
+  		}
+	},
+
+	"AdminProperties.java": {
+  		"path": "java/com/nd/admin/config/",
+  		"replace": {
+  			"ADMIN_TARGET_URI_DEFAULT_VALUE": {
+	  			"from": "http://microblog.dev.web.nd/v0.1/",
+	  			"to": "http://mytest.dev.web.nd/v0.1/"
+  			}
+  		}
+	}
+}

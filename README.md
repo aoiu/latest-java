@@ -8,13 +8,13 @@
 ## 使用方法
 
 ### 安装
-···bash
+```bash
 $ npm install -g latest-java
-···
+```
 
 ### 配置config.json
 在webapp目录下新建config.json，内容示例如下
-···bash
+```bash
 {
 	"WebApplication.java": {
   		"path": "../java/com/nd/admin/app/",
@@ -36,9 +36,9 @@ $ npm install -g latest-java
   		}
 	}
 }
-···
+```
 
 ### 进入webapp目录（与dong一致）
-···bash
+```bash
 $ latest-java
-···
+```

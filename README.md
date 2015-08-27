@@ -1,2 +1,2 @@
 # latest-java
-从admin-develop更新java，再重新修改配置
+从admin-develop更新java，再根据config.json的内容重新修改

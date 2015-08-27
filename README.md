@@ -1,6 +1,6 @@
 # latest-java
 [![NPM version](https://img.shields.io/npm/v/dong.svg?style=flat-square)](https://npmjs.org/package/latest-java)
-> 从admin-develop更新java，再重新修改配置
+> 从admin-develop更新java部分，再根据config.json重新修改配置
 
 ## 前置条件
 环境变量PATH中有svn.exe所在目录，确保svn命令行可以正常使用
@@ -13,7 +13,7 @@ $ npm install -g latest-java
 ```
 
 ### 配置config.json
-在webapp目录下新建config.json，内容示例如下
+在webapp目录下新建config.json文件，内容示例如下，一般情况下修改"to"后面的内容即可
 ```bash
 {
 	"WebApplication.java": {
@@ -42,3 +42,4 @@ $ npm install -g latest-java
 ```bash
 $ latest-java
 ```
+程序将删除java目录，重新从admin-develop的svn中导出java部分，再根据config.json替换指定内容

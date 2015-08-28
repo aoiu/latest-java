@@ -11,27 +11,43 @@ var Queue = require('dong-queue');
 var path = require('path');
 
 function cleanup(next) {
-	log.info('java','cleanup');
+	log.info('cleanup','begin');
 	rimraf('../java', function(err) {
 		if(err) {
-			log.error('cleanup',err);
+			log.error('cleanup','java '+err);
 		}
 		else {
-			log.info('cleanup','done');
+			log.info('cleanup','java done');
 		}
-		next();
+		rimraf('../filters', function(err) {
+			if(err) {
+				log.error('cleanup','filters '+err);
+			}
+			else {
+				log.info('cleanup','filters done');
+			}
+			log.info('cleanup', 'done');
+			next();
+		});
 	});
 }
 
 function getCode(next) {
-	log.info('java','getCode');
-	var child = spawnSync('svn', ['export', 'http://svn.sdp.nd/svn/admin-develop/branch/src/main/java/', path.resolve( process.cwd(), '../java'),'--username','901010']);
-	var outputArr = child.stdout.toString().split('\r\n');
-	outputArr.forEach(function(line) {
+	log.info('getCode','begin');
+	var childJava = spawnSync('svn', ['export', 'http://svn.sdp.nd/svn/admin-develop/branch/src/main/java/', path.resolve( process.cwd(), '../java'),'--username','901010']);
+	var childFilters = spawnSync('svn', ['export', 'http://svn.sdp.nd/svn/admin-develop/branch/src/main/filters/', path.resolve( process.cwd(), '../filters'),'--username','901010']);
+	var outputJava = childJava.stdout.toString().split('\r\n');
+	var outputFilters = childFilters.stdout.toString().split('\r\n');
+	outputJava.forEach(function(line) {
 		if(line) {
 			log.info('svn',line);
 		}
-	})
+	});
+	outputFilters.forEach(function(line) {
+		if(line) {
+			log.info('svn',line);
+		}
+	});
 	log.info('getCode','done');
 	next();
 }
@@ -44,6 +60,12 @@ function updateConfig(next) {
 		for(var rep in config[key]['replace']) {
 			var replacement = config[key]['replace'][rep];
 			content = content.replace(replacement['from'], replacement['to']);
+			fs.writeFileSync(filename, content);
+			log.info('update',key+' '+rep);
+		}
+		for(var rep in config[key]['direct']) {
+			var pattern = new RegExp(rep+'.*');
+			var content = content.replace(pattern, rep+'='+config[key]['direct'][rep]);
 			fs.writeFileSync(filename, content);
 			log.info('update',key+' '+rep);
 		}

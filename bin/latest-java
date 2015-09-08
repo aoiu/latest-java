@@ -90,9 +90,10 @@ fs.exists('./config.json', function(exists) {
 		});
 	}
 	else {
-		log.info('check','connot find config.json');
+		log.error('check','connot find config.json');
 		fs.writeFileSync('./config.json', fs.readFileSync(path.join(process.argv[1], '..','..','/config.json')));
 		log.info('done','created a sample config.json');
+		log.info('todo','please edit config.json for your project and run me again');
 	}
 });
 

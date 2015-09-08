@@ -1,6 +1,6 @@
 {
   "name": "latest-java",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "update the java and filter part",
   "bin": {
   	"latest-java": "./bin/latest-java"

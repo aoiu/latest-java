@@ -151,6 +151,6 @@ $ npm install -g latest-java
 ```bash
 $ latest-java
 ```
-程序将删除java和filters目录，重新从admin-develop的svn中导出java和filters，再根据config.json替换指定内容。
+程序将删除java和filters目录，重新从admin-develop的svn中导出java和filters，再根据config.json替换指定内容
 
 如果没有找到config.json将生成一个示例，修改后再执行即可

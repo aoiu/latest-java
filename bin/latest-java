@@ -91,7 +91,7 @@ fs.exists('./config.json', function(exists) {
 	}
 	else {
 		log.info('check','connot find config.json');
-		fs.writeFileSync('./config.json', fs.readFileSync(path.join(process.execPath, '..','..','/config.json')));
+		fs.writeFileSync('./config.json', fs.readFileSync(path.join(process.argv[1], '..','..','/config.json')));
 		log.info('done','created a sample config.json');
 	}
 });

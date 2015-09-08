@@ -72,5 +72,55 @@
         "mongodb.password": "sample",
         "admin.target.uri": "http://sample.debug.web.nd/v0.1/"
       }
+  },
+
+  "dev-contentService": {
+      "name": "contentService.properties",
+      "path": "../filters/resources/development/",
+      "direct": {
+        "id": "sample_service_id",
+        "path": "/dev_content_sample",
+        "uri": "http://sdpcs.beta.web.sdp.101.com/v0.1/"
+      }
+  },
+
+  "preprod-contentService": {
+      "name": "contentService.properties",
+      "path": "../filters/resources/preproduction/",
+      "direct": {
+        "id": "sample_service_id",
+        "path": "/preproduction_content_sample",
+        "uri": "http://sdpcs.beta.web.sdp.101.com/v0.1/"
+      }
+  },
+
+  "press-contentService": {
+      "name": "contentService.properties",
+      "path": "../filters/resources/pressure/",
+      "direct": {
+        "id": "sample_service_id",
+        "path": "/pressure_content_sample",
+        "uri": "http://sdpcs.beta.web.sdp.101.com/v0.1/"
+      }
+  },
+
+  "prod-contentService": {
+      "name": "contentService.properties",
+      "path": "../filters/resources/product/",
+      "direct": {
+        "id": "sample_service_id",
+        "path": "/sample",
+        "uri": "http://cs.101.com/v0.1/"
+      }
+  },
+
+  "test-contentService": {
+      "name": "contentService.properties",
+      "path": "../filters/resources/test/",
+      "direct": {
+        "id": "sample_service_id",
+        "path": "/qa_content_sample",
+        "uri": "http://sdpcs.beta.web.sdp.101.com/v0.1/"
+      }
   }
 }

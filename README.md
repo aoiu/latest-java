@@ -15,6 +15,7 @@ $ npm install -g latest-java
 ### 配置config.json
 在webapp目录下新建config.json文件，内容示例如下，
 > java文件使用replace方式将寻找原内容替换，properties文件使用direct方式将寻找匹配的属性重写内容
+> 有name时根据name和path定位要修改的文件，无name时把key视为文件名
 
 ```bash
 {
@@ -90,6 +91,56 @@ $ npm install -g latest-java
         "mongodb.username": "qa_mdb_sample",
         "mongodb.password": "sample",
         "admin.target.uri": "http://sample.debug.web.nd/v0.1/"
+      }
+  },
+  
+    "dev-contentService": {
+      "name": "contentService.properties",
+      "path": "../filters/resources/development/",
+      "direct": {
+        "id": "sample_service_id",
+        "path": "/dev_content_sample",
+        "uri": "http://sdpcs.beta.web.sdp.101.com/v0.1/"
+      }
+  },
+
+  "preprod-contentService": {
+      "name": "contentService.properties",
+      "path": "../filters/resources/preproduction/",
+      "direct": {
+        "id": "sample_service_id",
+        "path": "/preproduction_content_sample",
+        "uri": "http://sdpcs.beta.web.sdp.101.com/v0.1/"
+      }
+  },
+
+  "press-contentService": {
+      "name": "contentService.properties",
+      "path": "../filters/resources/pressure/",
+      "direct": {
+        "id": "sample_service_id",
+        "path": "/pressure_content_sample",
+        "uri": "http://sdpcs.beta.web.sdp.101.com/v0.1/"
+      }
+  },
+
+  "prod-contentService": {
+      "name": "contentService.properties",
+      "path": "../filters/resources/product/",
+      "direct": {
+        "id": "sample_service_id",
+        "path": "/sample",
+        "uri": "http://cs.101.com/v0.1/"
+      }
+  },
+
+  "test-contentService": {
+      "name": "contentService.properties",
+      "path": "../filters/resources/test/",
+      "direct": {
+        "id": "sample_service_id",
+        "path": "/qa_content_sample",
+        "uri": "http://sdpcs.beta.web.sdp.101.com/v0.1/"
       }
   }
 }

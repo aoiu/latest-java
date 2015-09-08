@@ -55,7 +55,7 @@ function getCode(next) {
 function updateConfig(next) {
 	var config = JSON.parse(fs.readFileSync('./config.json'));
 	for(var key in config) {
-		var filename = path.join(config[key]['path'], key);
+		var filename = path.join(config[key]['path'], config[key]['name'] || key);
 		var content = fs.readFileSync(filename, {encoding: 'utf-8'});
 		for(var rep in config[key]['replace']) {
 			var replacement = config[key]['replace'][rep];

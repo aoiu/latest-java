@@ -15,6 +15,7 @@ $ npm install -g latest-java
 ### 配置config.json
 在webapp目录下新建config.json文件，内容示例如下，
 > java文件使用replace方式将寻找原内容替换，properties文件使用direct方式将寻找匹配的属性重写内容
+
 > 有name时根据name和path定位要修改的文件，无name时把key视为文件名
 
 ```bash
